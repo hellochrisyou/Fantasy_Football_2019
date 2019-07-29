@@ -1,0 +1,36 @@
+<mat-toolbar>
+  <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center">
+    <span>Fantasy Football</span>
+
+    <span class="toolbar-spacer"></span>
+
+    <span class="login" *ngIf="!auth.isAuthenticated()" (click)="auth.login()">Login</span>
+    <mat-icon
+      class="toolbar-icon btn"
+      *ngIf="!auth.isAuthenticated()"
+      matTooltip="Login"
+      (click)="auth.login()"
+      aria-hidden="false"
+      aria-label="login"
+      >exit_to_app</mat-icon
+    >
+    <span class="logout" *ngIf="auth.isAuthenticated()" (click)="auth.logout()">Logout</span>
+    <mat-icon
+      class="toolbar-icon btn"
+      *ngIf="auth.isAuthenticated()"
+      matTooltip="Logout"
+      (click)="auth.logout()"
+      aria-hidden="false"
+      aria-label="logout"
+      >exit_to_app</mat-icon
+    >
+  </mat-toolbar-row>
+</mat-toolbar>
+<h4 *ngIf="auth.isAuthenticated()" style="margin:0 auto;text-align:center">
+  <u>{{ userName }} </u><br />
+  You are logged in.
+</h4>
+<h4 *ngIf="!auth.isAuthenticated()" style="margin:0 auto;text-align:center">
+  You are not logged in!<br /><u>Please login to continue.</u>
+</h4>
+<router-outlet *ngIf="auth.isAuthenticated()" #o="outlet"></router-outlet>

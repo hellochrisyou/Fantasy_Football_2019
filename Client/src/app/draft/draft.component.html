@@ -1,0 +1,22 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 text-center">League: {{ leagueName }}</h1>
+  </div>
+</div>
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="My Team">
+    <div fxLayout="column" fxLayoutAlign="space-around center" class="flex-bot-padding" style="min-height:100vh">
+      <app-my-draft-team fxLayout="column" fxLayoutAlign="space-around center"></app-my-draft-team>
+    </div>
+  </mat-tab>
+  <mat-tab label="Other Teams">
+    <div fxLayout="column" fxLayoutAlign="space-around center" class="flex-bot-padding" style="min-height:100vh">
+      <app-other-draft-teams fxLayout="column" fxLayoutAlign="space-around center"></app-other-draft-teams>
+    </div>
+  </mat-tab>
+  <mat-tab label="Draft">
+    <div fxLayout="column" fxLayoutAlign="space-around center" class="flex-bot-padding" style="min-height:100vh">
+      <app-draft-teams fxLayout="column" fxLayoutAlign="space-around center"></app-draft-teams>
+    </div>
+  </mat-tab>
+</mat-tab-group>

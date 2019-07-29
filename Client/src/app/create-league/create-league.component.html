@@ -1,0 +1,59 @@
+
+
+<section>
+  <mat-card class="mat-elevation-z6">
+
+    <mat-card-header>
+      <mat-card-title>Create a League</mat-card-title>
+    </mat-card-header>
+    <form class="league-form" fxLayout="column" fxLayoutAlign="space-evenly center">
+      <mat-form-field class="league-form-field">
+        <input
+          matInput
+          type="text"
+          placeholder="League Name"
+          [(ngModel)]="league"
+          minlength="1"
+          maxlength="24"
+          #leagueValue
+          [formControl]="leagueFormCtrl"
+        />
+        <mat-hint align="start"><strong>Minimum 1 character. Maximum 24.</strong> </mat-hint>
+        <mat-hint align="end">{{ leagueValue.value.length }} / 24</mat-hint>
+        <mat-error *ngIf="leagueFormCtrl.hasError('required')">
+          League Name is required.
+        </mat-error>
+      </mat-form-field>
+      <div class="text-center">
+        <label class="text-center">Pick your helmet logo</label>
+        <mat-radio-group
+          id="helmet-radio-group"
+          fxLayout="row wrap"
+          fxLayoutAlign="space-around center"
+          [(ngModel)]="helmet"
+          [formControl]="helmetFormCtrl"
+        >
+          <mat-radio-button value="red"><i class="fas fa-football-ball" style="color:red"></i></mat-radio-button>
+          <mat-radio-button value="orange"><i class="fas fa-football-ball" style="color:orange"></i></mat-radio-button>
+          <mat-radio-button value="gold"><i class="fas fa-football-ball" style="color:goldenrod"></i></mat-radio-button>
+          <mat-radio-button value="black"><i class="fas fa-football-ball" style="color:black"></i></mat-radio-button>
+          <mat-radio-button value="grey"><i class="fas fa-football-ball" style="color:grey"></i></mat-radio-button>
+          <mat-radio-button value="green"><i class="fas fa-football-ball" style="color:green"></i></mat-radio-button>
+          <mat-radio-button value="blue"><i class="fas fa-football-ball" style="color:blue"></i></mat-radio-button>
+          <mat-radio-button value="purple"
+            ><i class="fas fa-football-ball" style="color:blueviolet"></i
+          ></mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <button
+        class="create-league-submit"
+        mat-raised-button
+        color="primary"
+        (click)="createLeague(league, helmet)"
+        [disabled]="!leagueFormCtrl.valid"
+      >
+        Submit League Name
+      </button>
+    </form>
+  </mat-card>
+</section>

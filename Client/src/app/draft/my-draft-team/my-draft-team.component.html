@@ -1,0 +1,27 @@
+<mat-card class="mat-elevation-z6">
+  <mat-card-header>
+    <div mat-card-avatar class="header-image"></div>
+    <mat-card-title>My Team</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <table mat-table [dataSource]="myPlayers" matSort>
+      <ng-container matColumnDef="position" sticky>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>No.</th>
+        <td mat-cell *matCellDef="let myPlayers">{{ myPlayers.name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+        <td mat-cell *matCellDef="let myPlayers">{{ myPlayers.position }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="points">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Points</th>
+        <td mat-cell *matCellDef="let myPlayers">{{ myPlayers.fantasy_points }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="playerCol"></tr>
+      <tr mat-row *matRowDef="let row; columns: playerCol"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>

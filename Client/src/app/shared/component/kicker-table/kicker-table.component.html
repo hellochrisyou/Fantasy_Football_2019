@@ -1,0 +1,55 @@
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter" />
+</mat-form-field>
+<div class="mat-elevation-z7" fxLayout="column" fxLayoutAlign="center stretch">
+  <table mat-table [dataSource]="dataSource" matSort matSortDirection="asc">
+    <ng-container matColumnDef="button">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row; let i = index" (click)="addKicker(i)">
+        <button class="plus-button">
+          <i style="color:green" class="fa fa-plus-circle" aria-hidden="true"></i>
+        </button>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell *matCellDef="let kickerArray">{{ kickerArray.name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="fg0To19">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>FG0-19</th>
+      <td mat-cell *matCellDef="let kickerArray">{{ kickerArray.fg0To19 }}</td>
+    </ng-container>
+    <ng-container matColumnDef="fg20To29">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>FG20To29</th>
+      <td mat-cell *matCellDef="let kickerArray">{{ kickerArray.fg20To29 }}</td>
+    </ng-container>
+    <ng-container matColumnDef="fg30To39">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>FG30To39</th>
+      <td mat-cell *matCellDef="let kickerArray">{{ kickerArray.fg30To39 }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="fg40To49">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>FG40To49</th>
+      <td mat-cell *matCellDef="let kickerArray">{{ kickerArray.fg40To49 }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="fg50Plus">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>FG50Plus</th>
+      <td mat-cell *matCellDef="let kickerArray">{{ kickerArray.fg50Plus }}</td>
+    </ng-container>
+    <ng-container matColumnDef="pat">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>PAT</th>
+      <td mat-cell *matCellDef="let kickerArray">{{ kickerArray.PAT }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="points">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Points</th>
+      <td mat-cell *matCellDef="let kickerArray">{{ kickerArray.fantasy_points }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="kCol; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: kCol"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[10, 20, 30]" showFirstLastButtons></mat-paginator>
+</div>

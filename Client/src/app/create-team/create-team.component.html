@@ -1,0 +1,70 @@
+<section>
+  <mat-card class="mat-elevation-z6">
+    <mat-card-header>
+      <mat-card-title>Create a team</mat-card-title>
+    </mat-card-header>
+
+    <form class="team-form" fxLayout="column" fxLayoutAlign="space-evenly center">
+      <h4>Select League</h4>
+      <mat-form-field>
+        <mat-label>Select available League</mat-label>
+        <mat-select [formControl]="leagueFormCtrl" [(ngModel)]="name">
+          <mat-option *ngFor="let league of leagues" [value]="league">
+            {{ league }}
+          </mat-option>
+        </mat-select>
+        <mat-hint>Errors appear instantly!</mat-hint>
+        <mat-error *ngIf="leagueFormCtrl.hasError('required')">You must make a selection</mat-error>
+      </mat-form-field>
+      <mat-form-field class="team-form-field">
+        <input
+          matInput
+          type="text"
+          placeholder="team Name"
+          [(ngModel)]="team"
+          minlength="1"
+          maxlength="24"
+          #teamValue
+          [formControl]="teamFormCtrl"
+        />
+        <mat-hint align="start"><strong>Minimum 1 character. Maximum 24.</strong> </mat-hint>
+        <mat-hint align="end">{{ teamValue.value.length }} / 24</mat-hint>
+        <mat-error *ngIf="teamFormCtrl.hasError('required')">
+          team Name is required.
+        </mat-error>
+      </mat-form-field>
+      <div class="text-center">
+        <label class="text-center">Pick your helmet logo</label>
+        <mat-radio-group
+          id="helmet-radio-group2"
+          fxLayout="row wrap"
+          fxLayoutAlign="space-around center"
+          [(ngModel)]="helmet2"
+          [formControl]="helmetFormCtrl2"
+        >
+          <mat-radio-button value="red2"><i class="fas fa-football-ball" style="color:red"></i></mat-radio-button>
+          <mat-radio-button value="orange2"><i class="fas fa-football-ball" style="color:orange"></i></mat-radio-button>
+          <mat-radio-button value="gold2"
+            ><i class="fas fa-football-ball" style="color:goldenrod"></i
+          ></mat-radio-button>
+          <mat-radio-button value="black2"><i class="fas fa-football-ball" style="color:black"></i></mat-radio-button>
+          <mat-radio-button value="grey2"><i class="fas fa-football-ball" style="color:grey"></i></mat-radio-button>
+          <mat-radio-button value="green2"><i class="fas fa-football-ball" style="color:green"></i></mat-radio-button>
+          <mat-radio-button value="blue2"><i class="fas fa-football-ball" style="color:blue"></i></mat-radio-button>
+          <mat-radio-button value="purple2"
+            ><i class="fas fa-football-ball" style="color:blueviolet"></i
+          ></mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <button
+        class="create-team-submit"
+        mat-raised-button
+        color="primary"
+        (click)="createTeam(team, helmet2, name)"
+        [disabled]="!teamFormCtrl.valid || !leagueFormCtrl.valid"
+      >
+        Submit team Name
+      </button>
+    </form>
+  </mat-card>
+</section>

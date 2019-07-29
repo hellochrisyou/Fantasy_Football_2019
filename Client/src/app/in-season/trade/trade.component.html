@@ -1,0 +1,39 @@
+<main>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4 text-center">Scores</h1>
+    </div>
+  </div>
+  <div class="container">
+    <mat-accordion displayMode="flat" multi class="mat-table">
+      <section matSort class="mat-elevation-z4 mat-header-row">
+        <span class="mat-header-cell" mat-sort-header="name">Name</span>
+        <span class="mat-header-cell" mat-sort-header="wins">Wins</span>
+        <span class="mat-header-cell" mat-sort-header="loss">Loss</span>
+      </section>
+      <mat-expansion-panel *ngFor="let team of allTeams; let i = index">
+        <mat-expansion-panel-header class="mat-row">
+          <span class="mat-cell">{{ team.name }}</span>
+          <span class="mat-cell">{{ team.wins }}</span>
+          <span class="mat-cell">{{ team.loss }}</span>
+        </mat-expansion-panel-header>
+        <section class="mat-elevation-z4 mat-header-row">
+          <span class="mat-header-cell">Position</span>
+          <span class="mat-header-cell">name</span>
+        </section>
+        <div class="mat-table" *ngFor="let player of allTeams[i].players; let j = index">
+          <div class="mat-row" style="line-height:16px">
+            <span class="mat-cell" style="min-width: 34px; max-width:34px">
+              <button class="plus-button">
+                <i style="color:green" class="fa fa-plus" (click)="OpenDialogOtherTeam(i, j)" aria-hidden="true"></i>
+              </button>
+            </span>
+            <span class="mat-cell">{{ player.position }}</span>
+            <span class="mat-cell">{{ player.name }}</span>
+            <span class="mat-cell">{{ player.fantasyPoints }}</span>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</main>

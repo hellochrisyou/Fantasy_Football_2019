@@ -1,0 +1,58 @@
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(252, 189, 73);
+}
+
+.svg {
+  width: 300px;
+  height: 300px;
+}
+
+.hex {
+  fill: rgba(255, 255, 255, 0.9);
+  animation: fadein 3.3s infinite;
+  opacity: 0;
+  transform-origin: 50% 50%;
+}
+
+.hex:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.hex:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.hex:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.hex:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.hex:nth-child(6) {
+  animation-delay: 1s;
+}
+
+.hex:nth-child(7) {
+  animation-delay: 1.2s;
+}
+
+@keyframes fadein {
+  0%,
+  100% {
+    transform: scale(0.001, 0.001);
+    opacity: 0;
+  }
+
+  33%,
+  66% {
+    transform: scale(0.9, 0.9);
+    opacity: 1;
+  }
+}
