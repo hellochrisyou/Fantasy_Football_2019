@@ -10,6 +10,7 @@ public class Roster {
 	int rb = 0;
 	int wr = 0;
 	int te = 0;
+	int flex = 0;
 	int def = 0;
 	int k = 0;
 
@@ -30,6 +31,9 @@ public class Roster {
 				break;
 			case "TE":
 				this.te++;
+				break;
+			case "FLEX":
+				this.flex++;
 				break;
 			case "DEF":
 				this.def++;
@@ -53,6 +57,8 @@ public class Roster {
 			this.checkWr();
 		case "TE":
 			this.checkTe();
+		case "FLEX":
+			this.checkFlex();
 		case "DEF":
 			this.checkDef();
 		case "K":
@@ -94,6 +100,14 @@ public class Roster {
 			}
 	}
 
+	public boolean checkFlex() {
+		if (this.flex < 1) {
+			return true;
+		} else {
+			return false;
+			}
+	}
+	
 	public boolean checkDef() {
 		if (this.def < 1) {
 			return true;
