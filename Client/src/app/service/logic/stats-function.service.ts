@@ -40,7 +40,7 @@ export class StatsFunctionService {
       qb.stats['8'] != null ? (this.tmpQb.sack = qb.stats['8']) : (this.tmpQb.sack = 0);
       qb.stats['14'] != null ? (this.tmpQb.rushingYard = qb.stats['14']) : (this.tmpQb.rushingYard = 0);
       qb.stats['15'] != null ? (this.tmpQb.rushingTD = qb.stats['15']) : (this.tmpQb.rushingTD = 0);
-      qb.stats['30'] != null ? (this.tmpQb.fumble = qb.stats['30']) : (this.tmpQb.fumble = 0);
+      qb.stats['31'] != null ? (this.tmpQb.fumble = qb.stats['31']) : (this.tmpQb.fumble = 0);
 
       this.tmpQbArray.push(this.tmpQb);
     }
