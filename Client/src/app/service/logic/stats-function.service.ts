@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {QB, RB, WR, TE, DEF, Kicker} from '../../shared/model/interface.model';
+import { Injectable } from '@angular/core';
+import { QB, RB, WR, TE, DEF, Kicker } from '../../shared/model/interface.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class StatsFunctionService {
   tmpTeArray: TE[] = [];
   tmpDefArray: DEF[] = [];
   tmpKArray: Kicker[] = [];
-  constructor() {}
+  constructor() { }
 
   returnQbStats(qbArray: any[]): QB[] {
     for (const qb of qbArray) {
@@ -65,7 +65,7 @@ export class StatsFunctionService {
       rb.stats['20'] != null ? (this.tmpRb.reception = rb.stats['20']) : (this.tmpRb.reception = 0);
       rb.stats['21'] != null ? (this.tmpRb.receivingYard = rb.stats['21']) : (this.tmpRb.receivingYard = 0);
       rb.stats['22'] != null ? (this.tmpRb.receivingTD = rb.stats['22']) : (this.tmpRb.receivingTD = 0);
-      rb.stats['29'] != null ? (this.tmpRb.fumble = rb.stats['29']) : (this.tmpRb.fumble = 0);
+      rb.stats['31'] != null ? (this.tmpRb.fumble = rb.stats['31']) : (this.tmpRb.fumble = 0);
       this.tmpRbArray.push(this.tmpRb);
     }
     return this.tmpRbArray;
