@@ -9,16 +9,16 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./matchup.component.scss']
 })
 export class MatchupComponent implements OnInit {
-  displayedColumns: string[] = ['myName', 'myPosition', 'middle', 'otherName', 'otherPosition'];
-  thisMatchup: Matchup = {
-    myPlayers: [],
-    otherPlayers: []
-  };
-  dataSource: MatTableDataSource<Matchup>;
-  constructor(private leagueService: LeagueService) {}
+  // displayedColumns: string[] = ['myName', 'myPosition', 'middle', 'otherName', 'otherPosition'];
+  // thisMatchup: Matchup = {
+  //   myPlayers: [],
+  //   otherPlayers: []
+  // };
+  // dataSource: MatTableDataSource<Matchup>;
+  // constructor(private leagueService: LeagueService) {}
 
   ngOnInit() {
-    this.thisMatchup = this.leagueService.getMatchupTeam();
-    this.dataSource = new MatTableDataSource(this.thisMatchup);
+    // this.thisMatchup = this.leagueService.getMatchupTeam();
+    // this.dataSource = new MatTableDataSource(this.thisMatchup);
   }
 }
