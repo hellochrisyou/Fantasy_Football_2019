@@ -1,6 +1,6 @@
 Prototypical Fantasy Football website which hosts multiple leagues with teams and players.  
 
-Database design: League <Many-to-Many> Account <One-to-One> Team <Many-to-Many> Player 
+<img  src="https://chrisyou-backup-website.s3.amazonaws.com/assets/Fantasy_Football/FF-ER-Diagram.png" width="100%"/>
 
 CRUD Operation:
 - Range from trading players between teams, exchanging players from the waiver roster, and basic read operations.  
