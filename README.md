@@ -1,7 +1,5 @@
 Prototypical Fantasy Football website which hosts multiple leagues with teams and players.  
 
-<img  src="https://chrisyou-backup-website.s3.amazonaws.com/assets/Fantasy_Football/FF-ER-Diagram.png" width="100%"/>
-
 CRUD Operation:
 - Range from trading players between teams, exchanging players from the waiver roster, and basic read operations.  
 - Flow of CRUD Operation:
@@ -31,3 +29,4 @@ Spring Modules: Spring Boot, Spring Web, Spring MVC, Spring Rest, Spring Cache, 
 Angular Packages: Angular Material, Prettier, TsLint, Rxjs, Auth0
 
 <img  src="https://chrisyou-backup-website.s3.amazonaws.com/assets/Fantasy_Football/fantasy_football_github.png" width="100%"/>
+<img  src="https://chrisyou-backup-website.s3.amazonaws.com/assets/Fantasy_Football/FF-ER-Diagram.png" width="100%"/>
